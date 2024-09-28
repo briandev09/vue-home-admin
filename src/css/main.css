@@ -1,0 +1,16 @@
+@import 'tailwind/_base.css';
+@import 'tailwind/_components.css';
+@import 'tailwind/_utilities.css';
+
+body,html{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+}
+
+.transitions{
+    @apply transition duration-300 ease-in;
+}
+
+.zIndex{
+    z-index: 1000;
+}
