@@ -1,8 +1,25 @@
 <script setup>
 import { useNavitationStore } from '@/stores/nav';
+import { useUserStore } from '@/stores/users';
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { PlusIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { ref } from 'vue';
+const props =defineProps({
+    userId:String
+})
 const navStore = useNavitationStore()
+const userStore = useUserStore()
+const firstName = ref('')
+const secondName = ref('')
+const handleSubmit =async()=>{
+
+  await userStore.updateUsers(props.userId,firstName.value,secondName.value);
+
+   // clear input fields
+   firstName.value = ''
+   secondName.value = ''
+   navStore.handleEditModal(false)
+}
 </script>
 
 
@@ -32,15 +49,20 @@ const navStore = useNavitationStore()
                                         </button>
                                     </div>
                                 </div>
+                                <form @submit.prevent="handleSubmit">
                                 <div class="py-8">
                                     <div>
                                         <h2 class="text-text font-normal pb-2">First Name</h2>
-                                        <input type="text"
+                                        <input 
+                                         v-model="firstName"
+                                        type="text"
                                             class="w-full border border-hover rounded-sm p-1 outline-none text-sm text-text font-normal" />
                                     </div>
                                     <div>
                                         <h2 class="text-text font-normal py-2">Second Name</h2>
-                                        <input type="text"
+                                        <input 
+                                         v-model="secondName"
+                                        type="text"
                                             class="w-full border border-hover rounded-sm p-1 outline-none text-sm text-text font-normal" />
                                     </div>
                                 </div>
@@ -51,11 +73,14 @@ const navStore = useNavitationStore()
                                         Cancel
                                     </button>
                                     <button
+                                        type="submit"
                                         class="bg-button px-4 py-2 rounded-md flex gap-2 items-center font-normal text-text">
                                         <PlusIcon class="w-4 h-4 text-subMain font-bold" />
                                         Submit
                                     </button>
                                 </div>
+                                </form>
+
                             </div>
 
                         </DialogPanel>

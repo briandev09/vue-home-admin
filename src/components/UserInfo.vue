@@ -25,6 +25,6 @@ const navStore = useNavitationStore()
  
  </div>
  <!-- <User Edit Modal/> -->
- <UserEditModal/>
+ <UserEditModal :userId="(userStore.selectedUser as User).id"/>
  
 </template>

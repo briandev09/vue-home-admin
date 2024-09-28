@@ -14,7 +14,6 @@ export const useUserStore = defineStore('users', {
         async fetchUsers() {
             await axios.get(`${apiUrl}/users`)
                 .then((result) => {
-                    console.log("result", result?.data)
                     this.users = result?.data
                 })
                 .catch((error) => {
@@ -28,7 +27,7 @@ export const useUserStore = defineStore('users', {
                 id: (this.users.length + 1).toString(),
                 firstName: firstName,
                 lastName: secondName,
-                createdAt:this.getCustomDate(currentDate)
+                createdAt:currentDate
           })
             // add new user to database
             axios.post(`${apiUrl}/users`, {
@@ -43,11 +42,25 @@ export const useUserStore = defineStore('users', {
                 alert(error.message)
             })
         },
-        updateUsers() {
+       async updateUsers(id:string,firstName:string,secondName:string) {
+        const currentDate = this.getCurrentDate();
+            const newUpdateUser ={
+                id: id,
+                firstName: firstName,
+                lastName: secondName,
+                createdAt:this.getCustomDate(currentDate)
+            }
+            const index = this.users.findIndex(user => user.id === id)
+            if(index !== -1){
+                 
+                this.users[index] = {...this.users[index],...newUpdateUser}
+            }
 
-        },
-        removeUsers() {
+            // await axios.put(`${apiUrl}/users/id`,{}).then((result)=>{
 
+            // }).catch((error)=>{
+            //     alert(error.message)
+            // })
         },
         getCustomDate(_date:string) {
             const date = new Date(_date)
