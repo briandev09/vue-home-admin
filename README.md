@@ -1,5 +1,17 @@
-# Vue 3 + TypeScript + Vite
+# Vue3 Home Admin
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Tailwind , Vue3, Typescript
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Responsive layout
+
+## Mobile
+Mobile layout with hidden aside user navigation
+
+## Tablet
+Tablet layout with user navigation
+
+## Desktop
+
+## Run
+- npm install
+- npm run dev
