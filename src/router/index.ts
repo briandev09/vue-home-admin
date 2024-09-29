@@ -9,7 +9,7 @@ const routes=[
     name:'users',
     component:Users
  }
-] as any
+]
 
 const router = createRouter({
     history:createWebHashHistory(),

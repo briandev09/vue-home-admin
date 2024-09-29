@@ -4,6 +4,7 @@
     "paths": {
       "@/*":["src/*"]
     },
+    "types": ["jest","node"],
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -24,5 +25,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue","tests/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue","tests/unit/**/*.ts", "tests/e2e/**/*.ts"]
 }

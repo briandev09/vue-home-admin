@@ -1,6 +1,6 @@
 <script setup>
 import {Bars3Icon} from '@heroicons/vue/24/outline'
-import Header from '@/components/Header.vue'
+import HeaderBar from '@/components/HeaderBar.vue'
 import UserInfo from '@/components/UserInfo.vue'
 import UserList from '@/components/UserList.vue'
 import { useUserStore } from '@/stores/users'
@@ -11,7 +11,7 @@ const navStore = useNavitationStore()
 </script>
 <template lang="">
   <div class="bg-main w-full h-full">
-    <Header title="Users"/>
+    <HeaderBar title="Users"/>
     <div class="w-full h-screen px-4 md:p-12">
     <!--Menu bar in mobile view-->
     <div class="pt-8 mb-4 md:hidden cursor-pointer" @click="navStore.handleToggle(true)">

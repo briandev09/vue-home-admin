@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onBeforeMount, onMounted } from 'vue';
+import {onBeforeMount, onMounted } from 'vue';
 import {RouterView} from 'vue-router'
 import { useNavitationStore } from './stores/nav';
 import { useUserStore } from './stores/users';

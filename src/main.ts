@@ -15,4 +15,6 @@ createApp(App).use(router).use(pinia).mount('#app')
 
 //Init main store
 const useStore = useUserStore(pinia)
+// data
+console.log(useStore.users)
 
