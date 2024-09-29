@@ -50,7 +50,7 @@ export const useUserStore = defineStore('users', {
                 lastName: secondName,
                 createdAt:this.getCustomDate(currentDate)
             }
-            const index = this.users.findIndex(user => user.id === id)
+            const index = this.users.findIndex((user:any) => user.id === id)
             if(index !== -1){
                  
                 this.users[index] = {...this.users[index],...newUpdateUser}

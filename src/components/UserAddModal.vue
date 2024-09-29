@@ -62,6 +62,7 @@ const handleSubmit =async()=>{
                                 </div>
                                 <div class="py-2 flex gap-2 w-full justify-end items-center">
                                     <button
+                                        type="button"
                                         class="bg-button px-4 py-2 rounded-md flex gap-2 items-center font-normal text-text" @click="navStore.handleAddModal(false)">
                                         <XMarkIcon class="w-4 h-4" />
                                         Cancel
