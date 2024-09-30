@@ -12,8 +12,10 @@ export const useUserStore = defineStore('users', {
     }),
     actions: {
         async fetchUsers() {
-
-            await axios.get(`${apiUrl}/users`)
+            const url = new URL(`${apiUrl}/users`);
+            // url.searchParams.append('sortBy','id')
+            // url.searchParams.append('order','desc')
+            await axios.get(url.toString())
                 .then((result) => {
                     this.users = result?.data
                 })
